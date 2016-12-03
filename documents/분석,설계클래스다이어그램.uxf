@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1308</x>
+      <y>840</y>
+      <w>252</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Dice
+--
+
+--
++roll():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1392</x>
+      <y>384</y>
+      <w>252</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Panel
+--
+-cell:int[]
+--
++getCell():int[]
++setCell(int[]):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2052</x>
+      <y>540</y>
+      <w>252</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Scores
+--
+-name:String
+-win:int
+-lose:int
+-draw;int
+--
++getName():String
++setName(String):Scores
++getWin():int
++setWin(int):Scores
++getLose():int
++setLose(int):Scores
++getDraw():int
++setDraw(int):Scores
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>876</x>
+      <y>696</y>
+      <w>276</w>
+      <h>456</h>
+    </coordinates>
+    <panel_attributes>Status
+--
+-userDice:Dice
+-alphaDice:Dice
+-userValue:int
+-alphaValue:int
+-cell:int[]
+curCellForUser:int
+curCellForAlphaDice:int
+--
++getCell():int[]
++setCell(int[]):void
++getUserDice():Dice
++setUserDice(Dice):void
++getAlphaDice():Dice
++setAlphaDice(Dice):void
++getUserValue():int
++setUserValue(int):void
++getAlphaValue():int
++setAlphaValue(int):void
++getCurCellForUser():int
++setCurCellForUser(int):void
++getCurCellForAlphaDice():int
++setCurCellForAlphaDice(int):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>96</y>
+      <w>252</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>HomeController
+--
+
+--
++home():String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>384</y>
+      <w>408</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ConfigureController
+--
+-configureService:ConfigureService
+-panel:Panel
+--
++initConfigure(HttpServletRequest,Model):String
++configureHome(HttpServletRequest,Model):String
++setConfigure(HttpServletRequest,Model):String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1596</x>
+      <y>552</y>
+      <w>384</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ScoreDAO
+--
+-connection:Connection
+--
++insertScore(Scores):void
++selectAllScores():List&lt;Scores&gt;
++selectOne(String):Scores
++update(Scores):int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1944</x>
+      <y>12</y>
+      <w>312</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ScoreController
+--
+-scoreService:ScoreService
+--
++scoreView(Model):String
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>36</y>
+      <w>384</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>DiceGameController
+--
+-username:String
+-score:Scores
+-diceService:DiceService
+-scoreService:ScoreService
+-configureService:ConfigureService
+--
++startGmae(HttpServletRequest,Model):String
++playGame(HttpServletRequest,Model):String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>108</y>
+      <w>384</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>DiceService
+--
+-status:Status
+-panel:Panel
+--
++initGame():void
++rollingDice():WinningStatus
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1920</x>
+      <y>324</y>
+      <w>384</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ScoreService
+--
+--
++initScore(String):Scores
++scoreView():List&lt;Scores&gt;
++updateScore(Scores):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>384</x>
+      <y>660</y>
+      <w>384</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>ConfigureService
+--
+-panel:Panel
+-status:Status
+--
++initGame():void
++setConfigure(int,int):void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1788</x>
+      <y>396</y>
+      <w>156</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1596</x>
+      <y>192</y>
+      <w>120</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>564</x>
+      <y>180</y>
+      <w>36</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>144</y>
+      <w>156</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>864</y>
+      <w>192</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=2</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>120</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;jsp&gt;
+home
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>156</y>
+      <w>156</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>612</x>
+      <y>156</y>
+      <w>132</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1692</x>
+      <y>144</y>
+      <w>252</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>WinningStatus
+--
+NotYet
+Player
+Draw
+AlphaDice
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>516</y>
+      <w>36</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>756</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1524</x>
+      <y>264</y>
+      <w>36</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>396</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;jsp&gt;
+configure</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>504</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;jsp&gt;
+playgame</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2352</x>
+      <y>60</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;jsp&gt;
+result</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2520</x>
+      <y>72</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;jsp&gt;
+score</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>432</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>972</x>
+      <y>300</y>
+      <w>36</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1128</x>
+      <y>264</y>
+      <w>240</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;360.0;180.0;370.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1092</x>
+      <y>60</y>
+      <w>876</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>710.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2076</x>
+      <y>120</y>
+      <w>48</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2112</x>
+      <y>432</y>
+      <w>36</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2244</x>
+      <y>84</y>
+      <w>132</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2448</x>
+      <y>84</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
